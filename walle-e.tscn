@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dousegkh3pq61"]
+
+[ext_resource type="Script" uid="uid://cmg0drvnpo81l" path="res://walle_e.gd" id="1_myglb"]
+[ext_resource type="PackedScene" uid="uid://dmj658satu34w" path="res://assets/pocket_shrek_donkey.glb" id="3_f4t7v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_myglb"]
+size = Vector3(0.284142, 0.836293, 1.01533)
+
+[node name="pet" type="CharacterBody3D"]
+script = ExtResource("1_myglb")
+
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("3_f4t7v")]
+transform = Transform3D(-0.07, 0, -6.11959e-09, 0, 0.07, 0, 6.11959e-09, 0, -0.07, 0, -0.00688154, -0.239135)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.341, -0.242649)
+shape = SubResource("BoxShape3D_myglb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
