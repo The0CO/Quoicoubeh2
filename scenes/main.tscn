@@ -1,16 +1,17 @@
-[gd_scene load_steps=14 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=15 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_elriq"]
 [ext_resource type="Script" uid="uid://btk6ufxeaxh6v" path="res://scripts/hud.gd" id="3_s8mkj"]
 [ext_resource type="FontFile" uid="uid://biqtga8moh7ah" path="res://fonts/lilita_one_regular.ttf" id="3_w27de"]
+[ext_resource type="PackedScene" uid="uid://dousegkh3pq61" path="res://walle-e.tscn" id="3_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://dpm3l05d7fu35" path="res://objects/platform.tscn" id="5_3s40e"]
 [ext_resource type="PackedScene" uid="uid://r7rt7pth4u7o" path="res://objects/wall_low.tscn" id="5_6vel1"]
 [ext_resource type="PackedScene" uid="uid://c71evdjblk5wp" path="res://objects/wall_high.tscn" id="7_cabne"]
 [ext_resource type="PackedScene" uid="uid://bvx5cvigosg0s" path="res://objects/platform_large_grass.tscn" id="7_wggef"]
 [ext_resource type="PackedScene" uid="uid://d2g78tpqbyf5g" path="res://objects/enemy.tscn" id="8_7ty2f"]
 [ext_resource type="PackedScene" uid="uid://oqfhfp1a80qd" path="res://objects/cloud.tscn" id="10_5ksau"]
-[ext_resource type="PackedScene" uid="uid://dpf3qkd1iyfka" path="res://ciel_2.tscn" id="10_eb6dy"]
+[ext_resource type="PackedScene" path="res://ciel_2.tscn" id="10_eb6dy"]
 [ext_resource type="AudioStream" uid="uid://ddofr6w81gnf" path="res://weapons/ciel zob.wav" id="11_eb6dy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fpmwk"]
@@ -163,5 +164,9 @@ transform = Transform3D(1.73205, 0, 1, 0, 2, 0, -1, 0, 1.73205, -30.1261, 2.4268
 
 [node name="cube4" parent="Decoration" instance=ExtResource("10_5ksau")]
 transform = Transform3D(1.12202, 1.39419, -2.40776, 1.53922, 1.85165, 1.78946, 2.31773, -1.90463, -0.0227883, -0.881504, 13.0297, -30.1859)
+
+[node name="pet" parent="." instance=ExtResource("3_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.447586, 0.00863807, 0.742724)
+player_path = NodePath("../Player")
 
 [connection signal="health_updated" from="Player" to="HUD" method="_on_health_updated"]
