@@ -1,6 +1,6 @@
 <p align="center"><img src="icon.png"/></p>
 
-# Salut la team ça va
+# Salut la team ça va / oui et toi ?
 
 This package includes a basic template for a first person shooter in Godot 4.3 (stable). Includes features like;
 
