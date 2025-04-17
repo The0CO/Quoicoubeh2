@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpf3qkd1iyfka"]
+
+[ext_resource type="Texture2D" uid="uid://b7ofbmvofal6j" path="res://models/images.png" id="1_p6jkq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ya4ey"]
+albedo_texture = ExtResource("1_p6jkq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eb6dy"]
+albedo_texture = ExtResource("1_p6jkq")
+
+[sub_resource type="SphereMesh" id="SphereMesh_trceg"]
+material = SubResource("StandardMaterial3D_eb6dy")
+radius = 56.055
+height = 100.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_eb6dy"]
+radius = 60.0486
+
+[node name="ciel2" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.988923, 0, 0, 0)
+collision_layer = 4
+
+[node name="ciel" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.998427, 0.0546038, 0.0127438, 0.0411803, 0.559832, 0.827582, 0.0380547, 0.826805, -0.5612, -4.04506, -2.7457, -46.3633)
+material_override = SubResource("StandardMaterial3D_ya4ey")
+mesh = SubResource("SphereMesh_trceg")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.149062, -0.314552, -0.937463, -0.0778414, 0.941381, -0.328244, 0.985759, 0.121902, 0.115838, -2.91973, -7.24878, -52.5054)
+shape = SubResource("SphereShape3D_eb6dy")

@@ -187,6 +187,9 @@ func action_jump():
 func action_shoot():
 	
 	if Input.is_action_pressed("shoot"):
+		real_shoot()
+		
+func real_shoot():
 	
 		if !blaster_cooldown.is_stopped(): return # Cooldown for shooting
 		
